@@ -19,10 +19,11 @@ export default {
   },
   methods: {
     setCapital(e) {
+      this.capital=e;
       //TODO: implementar. fija la capital del input.
-    },
     adivinarCapital() {
       //TODO: implementar. verifica se la adivinanza es correcta.
+      this.capital==this.country;
     },
   },
 };
@@ -37,7 +38,14 @@ export default {
     />
     <button @click="adivinarCapital">Adivina!</button>
     <div class="countries-container">
-      <!--TODO: CREAR EL COMPONENTE PARA VISUALIZAR EL PAIS-->
+      <CountryComponent 
+        v-for="(country, index) in countries"
+        :key="index"
+        :name="country.name"
+        :currency_name="country.currency_name[0].url"
+        :region="country.region"
+        :code="country.code"
+      ></CountryComponent>
     </div>
   </div>
 </template>

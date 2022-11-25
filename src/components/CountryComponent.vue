@@ -9,6 +9,7 @@ export default {
     "region",
     "code",
     //TODO: crear una propiedad para determinar si al componente se le puede hacer click
+    "clickeable"
   ],
 };
 </script>
@@ -16,8 +17,9 @@ export default {
 <template>
   <!--TODO: Utilizar la propiedad creada para controlar el click. Cuando el componente es "clickeable", redirigir a la pagina del pais.
   Mira las rutas para ver como redirigir al usuario.-->
-  <div
-  >
+  <button class="btn btn-secondary" @click="clickeable">
+        Click</button>  
+  <div>
   <!--TODO: Poblar el HTML con las propiedades. Usar https://countryflagsapi.com/png/${code}-->
   <img
       width="200"
